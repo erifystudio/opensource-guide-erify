@@ -1,0 +1,61 @@
+name: SLSA generic generator
+on:
+  workflow_dispatch:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      digests: ${{ steps.hash.outputs.digests }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # ========================================================
+      # Step 1: Build your artifacts.
+      # ========================================================
+      - name: Build artifacts
+        run: |
+          # Example artifacts — replace with your real build.
+          echo "artifact1" > artifact1
+          echo "artifact2" > artifact2
+
+      # ========================================================
+      # Step 2: Generate provenance subjects (file -> sha256).
+      # Format must be: "<path>: sha256:<hex>"
+      # ========================================================
+      - name: Compute SHA-256 digests
+        id: hash
+        run: |
+          set -euo pipefail
+          make_subject () { f="$1"; echo "${f}: sha256:$(sha256sum "${f}" | awk '{print $1}')"; }
+          {
+            make_subject artifact1
+            make_subject artifact2
+          } | tee subjects.txt
+
+          # Expose as a multi-line output for the next job.
+          {
+            echo "digests<<EOF"
+            cat subjects.txt
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+  # ============================================================
+  # Step 3: Generate SLSA v0.1 provenance (Level 3) using the
+  # official SLSA GitHub Generator reusable workflow.
+  # This will attach provenance to the release or run.
+  # ============================================================
+  provenance:
+    needs: build
+    permissions:
+      actions: read          # required by the generator
+      id-token: write        # required for OIDC signing
+      contents: write        # to upload provenance as a release asset
+    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.0.0
+    with:
+      subjects: ${{ needs.build.outputs.digests }}
+      # Optional: name the provenance file explicitly
+      # provenance-name: "provenance.intoto.jsonl"
