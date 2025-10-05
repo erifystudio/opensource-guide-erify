@@ -1,0 +1,244 @@
+From e7f01966e08003403019ba6f6972ac22fb8816ec Mon Sep 17 00:00:00 2001
+From: "dependabot[bot]" <49699333+dependabot[bot]@users.noreply.github.com>
+Date: Thu, 18 Sep 2025 20:05:31 +0000
+Subject: [PATCH] [Docs Site] Bump wrangler from 4.37.0 to 4.38.0
+
+Bumps [wrangler](https://github.com/cloudflare/workers-sdk/tree/HEAD/packages/wrangler) from 4.37.0 to 4.38.0.
+- [Release notes](https://github.com/cloudflare/workers-sdk/releases)
+- [Changelog](https://github.com/cloudflare/workers-sdk/blob/main/packages/wrangler/CHANGELOG.md)
+- [Commits](https://github.com/cloudflare/workers-sdk/commits/wrangler@4.38.0/packages/wrangler)
+
+---
+updated-dependencies:
+- dependency-name: wrangler
+  dependency-version: 4.38.0
+  dependency-type: direct:development
+  update-type: version-update:semver-minor
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+---
+ package-lock.json | 146 ++++++++++++++++++++++++++++++++++++++++++----
+ package.json      |   2 +-
+ 2 files changed, 135 insertions(+), 13 deletions(-)
+
+diff --git a/package-lock.json b/package-lock.json
+index 7ddf45ca627da0d..f885cc2128d1966 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -116,7 +116,7 @@
+ 				"unist-util-visit": "5.0.0",
+ 				"vite-tsconfig-paths": "5.1.4",
+ 				"vitest": "2.1.6",
+-				"wrangler": "4.37.0"
++				"wrangler": "4.38.0"
+ 			},
+ 			"engines": {
+ 				"node": ">=22"
+@@ -19605,20 +19605,20 @@
+ 			}
+ 		},
+ 		"node_modules/wrangler": {
+-			"version": "4.37.0",
+-			"resolved": "https://registry.npmjs.org/wrangler/-/wrangler-4.37.0.tgz",
+-			"integrity": "sha512-W8IbQohQbUHFn4Hz2kh8gi0SdyFV/jyi9Uus+WrTz0F0Dc9W5qKPCjLbxibeE53+YPHyoI25l65O7nSlwX+Z6Q==",
++			"version": "4.38.0",
++			"resolved": "https://registry.npmjs.org/wrangler/-/wrangler-4.38.0.tgz",
++			"integrity": "sha512-ITL4VZ4KWs8LMDEttDTrAKLktwtv1NxHBd5QIqHOczvcjnAQr+GQoE6XYQws+w8jlOjDV7KyvbFqAdyRh5om3g==",
+ 			"dev": true,
+ 			"license": "MIT OR Apache-2.0",
+ 			"dependencies": {
+ 				"@cloudflare/kv-asset-handler": "0.4.0",
+-				"@cloudflare/unenv-preset": "2.7.3",
++				"@cloudflare/unenv-preset": "2.7.4",
+ 				"blake3-wasm": "2.1.5",
+ 				"esbuild": "0.25.4",
+-				"miniflare": "4.20250906.2",
++				"miniflare": "4.20250917.0",
+ 				"path-to-regexp": "6.3.0",
+ 				"unenv": "2.0.0-rc.21",
+-				"workerd": "1.20250906.0"
++				"workerd": "1.20250917.0"
+ 			},
+ 			"bin": {
+ 				"wrangler": "bin/wrangler.js",
+@@ -19631,7 +19631,7 @@
+ 				"fsevents": "~2.3.2"
+ 			},
+ 			"peerDependencies": {
+-				"@cloudflare/workers-types": "^4.20250906.0"
++				"@cloudflare/workers-types": "^4.20250917.0"
+ 			},
+ 			"peerDependenciesMeta": {
+ 				"@cloudflare/workers-types": {
+@@ -19639,6 +19639,107 @@
+ 				}
+ 			}
+ 		},
++		"node_modules/wrangler/node_modules/@cloudflare/unenv-preset": {
++			"version": "2.7.4",
++			"resolved": "https://registry.npmjs.org/@cloudflare/unenv-preset/-/unenv-preset-2.7.4.tgz",
++			"integrity": "sha512-KIjbu/Dt50zseJIoOOK5y4eYpSojD9+xxkePYVK1Rg9k/p/st4YyMtz1Clju/zrenJHrOH+AAcjNArOPMwH4Bw==",
++			"dev": true,
++			"license": "MIT OR Apache-2.0",
++			"peerDependencies": {
++				"unenv": "2.0.0-rc.21",
++				"workerd": "^1.20250912.0"
++			},
++			"peerDependenciesMeta": {
++				"workerd": {
++					"optional": true
++				}
++			}
++		},
++		"node_modules/wrangler/node_modules/@cloudflare/workerd-darwin-64": {
++			"version": "1.20250917.0",
++			"resolved": "https://registry.npmjs.org/@cloudflare/workerd-darwin-64/-/workerd-darwin-64-1.20250917.0.tgz",
++			"integrity": "sha512-0kL/kFnKUSycoo7b3PgM0nRyZ+1MGQAKaXtE6a2+SAeUkZ2FLnuFWmASi0s4rlWGsf/rlTw4AwXROePir9dUcQ==",
++			"cpu": [
++				"x64"
++			],
++			"dev": true,
++			"license": "Apache-2.0",
++			"optional": true,
++			"os": [
++				"darwin"
++			],
++			"engines": {
++				"node": ">=16"
++			}
++		},
++		"node_modules/wrangler/node_modules/@cloudflare/workerd-darwin-arm64": {
++			"version": "1.20250917.0",
++			"resolved": "https://registry.npmjs.org/@cloudflare/workerd-darwin-arm64/-/workerd-darwin-arm64-1.20250917.0.tgz",
++			"integrity": "sha512-3/N1QmEJsC8Byxt1SGgVp5o0r+eKjuUEMbIL2yzLk/jrMdErPXy/DGf/tXZoACU68a/gMEbbT1itkYrm85iQHg==",
++			"cpu": [
++				"arm64"
++			],
++			"dev": true,
++			"license": "Apache-2.0",
++			"optional": true,
++			"os": [
++				"darwin"
++			],
++			"engines": {
++				"node": ">=16"
++			}
++		},
++		"node_modules/wrangler/node_modules/@cloudflare/workerd-linux-64": {
++			"version": "1.20250917.0",
++			"resolved": "https://registry.npmjs.org/@cloudflare/workerd-linux-64/-/workerd-linux-64-1.20250917.0.tgz",
++			"integrity": "sha512-E7sEow7CErbWY3olMmlbj6iss9r7Xb2uMyc+MKzYC9/J6yFlJd/dNHvjey9QIdxzbkC9qGe90a+KxQrjs+fspA==",
++			"cpu": [
++				"x64"
++			],
++			"dev": true,
++			"license": "Apache-2.0",
++			"optional": true,
++			"os": [
++				"linux"
++			],
++			"engines": {
++				"node": ">=16"
++			}
++		},
++		"node_modules/wrangler/node_modules/@cloudflare/workerd-linux-arm64": {
++			"version": "1.20250917.0",
++			"resolved": "https://registry.npmjs.org/@cloudflare/workerd-linux-arm64/-/workerd-linux-arm64-1.20250917.0.tgz",
++			"integrity": "sha512-roOnRjxut2FUxo6HA9spbfs32naXAsnSQqsgku3iq6BYKv1QqGiFoY5bReK72N5uxmhxo7+RiTo8ZEkxA/vMIQ==",
++			"cpu": [
++				"arm64"
++			],
++			"dev": true,
++			"license": "Apache-2.0",
++			"optional": true,
++			"os": [
++				"linux"
++			],
++			"engines": {
++				"node": ">=16"
++			}
++		},
++		"node_modules/wrangler/node_modules/@cloudflare/workerd-windows-64": {
++			"version": "1.20250917.0",
++			"resolved": "https://registry.npmjs.org/@cloudflare/workerd-windows-64/-/workerd-windows-64-1.20250917.0.tgz",
++			"integrity": "sha512-gslh6Ou9+kshHjR1BJX47OsbPw3/cZCvGDompvaW/URCgr7aMzljbgmBb7p0uhwGy1qCXcIt31St6pd3IEcLng==",
++			"cpu": [
++				"x64"
++			],
++			"dev": true,
++			"license": "Apache-2.0",
++			"optional": true,
++			"os": [
++				"win32"
++			],
++			"engines": {
++				"node": ">=16"
++			}
++		},
+ 		"node_modules/wrangler/node_modules/@img/sharp-darwin-arm64": {
+ 			"version": "0.33.5",
+ 			"resolved": "https://registry.npmjs.org/@img/sharp-darwin-arm64/-/sharp-darwin-arm64-0.33.5.tgz",
+@@ -20020,9 +20121,9 @@
+ 			}
+ 		},
+ 		"node_modules/wrangler/node_modules/miniflare": {
+-			"version": "4.20250906.2",
+-			"resolved": "https://registry.npmjs.org/miniflare/-/miniflare-4.20250906.2.tgz",
+-			"integrity": "sha512-SXGv8Rdd91b6UXZ5eW3rde/gSJM6WVLItMNFV7u9axUVhACvpT4CB5p80OBfi2OOsGfOuFQ6M6s8tMxJbzioVw==",
++			"version": "4.20250917.0",
++			"resolved": "https://registry.npmjs.org/miniflare/-/miniflare-4.20250917.0.tgz",
++			"integrity": "sha512-A7kYEc/Y6ohiiTji4W/qGJj3aJNc/9IMj/6wLy2phD/iMjcoY8t35654gR5mHbMx0AgUolDdr3HOsHB0cYBf+Q==",
+ 			"dev": true,
+ 			"license": "MIT",
+ 			"dependencies": {
+@@ -20034,7 +20135,7 @@
+ 				"sharp": "^0.33.5",
+ 				"stoppable": "1.1.0",
+ 				"undici": "7.14.0",
+-				"workerd": "1.20250906.0",
++				"workerd": "1.20250917.0",
+ 				"ws": "8.18.0",
+ 				"youch": "4.1.0-beta.10",
+ 				"zod": "3.22.3"
+@@ -20096,6 +20197,27 @@
+ 				"node": ">=20.18.1"
+ 			}
+ 		},
++		"node_modules/wrangler/node_modules/workerd": {
++			"version": "1.20250917.0",
++			"resolved": "https://registry.npmjs.org/workerd/-/workerd-1.20250917.0.tgz",
++			"integrity": "sha512-0D+wWaccyYQb2Zx2DZDC77YDn9kOpkpGMCgyKgIHilghut5hBQ/adUIEseS4iuIZxBPeFSn6zFtICP0SxZ3z0g==",
++			"dev": true,
++			"hasInstallScript": true,
++			"license": "Apache-2.0",
++			"bin": {
++				"workerd": "bin/workerd"
++			},
++			"engines": {
++				"node": ">=16"
++			},
++			"optionalDependencies": {
++				"@cloudflare/workerd-darwin-64": "1.20250917.0",
++				"@cloudflare/workerd-darwin-arm64": "1.20250917.0",
++				"@cloudflare/workerd-linux-64": "1.20250917.0",
++				"@cloudflare/workerd-linux-arm64": "1.20250917.0",
++				"@cloudflare/workerd-windows-64": "1.20250917.0"
++			}
++		},
+ 		"node_modules/wrangler/node_modules/zod": {
+ 			"version": "3.22.3",
+ 			"resolved": "https://registry.npmjs.org/zod/-/zod-3.22.3.tgz",
+diff --git a/package.json b/package.json
+index 69202ed69684db7..96083fa2efbf500 100644
+--- a/package.json
++++ b/package.json
+@@ -134,7 +134,7 @@
+ 		"unist-util-visit": "5.0.0",
+ 		"vite-tsconfig-paths": "5.1.4",
+ 		"vitest": "2.1.6",
+-		"wrangler": "4.37.0"
++		"wrangler": "4.38.0"
+ 	},
+ 	"engines": {
+ 		"node": ">=22"
